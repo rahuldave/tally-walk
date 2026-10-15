@@ -16,3 +16,38 @@ right of the page.
   `timewalk/saved/<step>`, and the page says how to get them back. In a `worktree/` that an older timewalk made, a
   move with edits asks first, and stashes them.
 
+## parts-01 The code, with its test
+
+$ just setup
+
+Code and its test arrive together, so the test checks the code from the first day. Read `tests/test_count.py`,
+then `count`.
+
+$ uv run python -m unittest discover -s tests -v
+$ git log --oneline --graph --all | head -12
+
+Both tests pass. The graph shows the branch `parts`, which leaves `main` where the project begins.
+
+> Ask: is it easier to read a test before the code, or after?
+
+files:
+- diff `tests/test_count.py`: a test of counting, and a test of case.
+  show: `self.assertEqual(count("A a"), {"a": 2})`
+- diff `src/tally/__init__.py`: `count`, which ignores case from the first day, and the command.
+  show: `for word in text.lower().split():`
+
+## parts-02 One more test
+
+$ just setup
+
+An empty text has no words, and `count` must give an empty dictionary for it. A test of an empty text says so. It
+passes at once, because `count` already handles it.
+
+$ uv run python -m unittest discover -s tests -v
+$ echo "" | uv run tally && echo "(nothing, as the test says)"
+
+The three tests pass, and tally prints nothing for an empty text.
+
+files:
+- diff `tests/test_empty.py`: an empty text counts nothing.
+  show: `self.assertEqual(count(""), {})`

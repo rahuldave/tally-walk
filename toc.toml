@@ -1,0 +1,95 @@
+# The walks of this class. The first is the default. Every path is read from this folder.
+# just present opens the first; just present tutorial opens another. just check checks them all.
+
+[[walk]]
+id = "narrative"
+title = "tally, step by step"
+description = "How tally, a word counter, was built: one tagged step at a time, from an empty command to a report."
+kind = "narrative"                # the tagged steps, and nothing between them
+notes = "notes.md"
+slides = "slides/slides.toml"
+
+[[walk]]
+id = "tests"
+title = "Only the tests"
+description = "Three steps of tally: the code, its tests, and the most common words."
+kind = "narrative"
+folder = "walks/tests"            # notes.md, and slides/slides.toml, in this folder
+steps = ["step-01", "step-02", "step-05"]   # some of the steps of main
+
+[[walk]]
+id = "parts"
+title = "Tests first, on the parts branch"
+description = "A part of the history on a branch of its own: the code and its tests, first."
+kind = "narrative"
+folder = "walks/parts"
+tags = "parts-*"                  # steps of its own, on another branch
+
+[[walk]]
+id = "tutorial"
+title = "tally, one move at a time"
+description = "Build tally yourself, one small commit at a time: a function, its tests, types, and a report."
+kind = "tutorial"                 # the tagged steps, and the small commits between them
+folder = "walks/tutorial"         # starts in do mode, the default: the learner makes each move by hand
+# step-03.1 is made with uv add --dev ruff. A learner who runs it on a later day gets a newer ruff than the commit, so
+# do mode compares these two files by the names of their packages, and not by their versions.
+loose = ["pyproject.toml", "uv.lock"]
+
+[[walk]]
+id = "hooks"
+title = "A git hook, one move at a time"
+description = "A check that git runs before each commit, and then the tests in it, shown one commit at a time."
+kind = "tutorial"
+folder = "walks/hooks"
+tags = "hooks-*"                  # a tutorial on one part, with tags of its own on the branch hooks
+moves = "watch"                   # starts in watch mode: Show checks out each move's commit
+sync = false                      # the slides do not follow the moves
+
+[[walk]]
+id = "small"
+title = "Two parts of tally, one move at a time"
+description = "A small tutorial taken out of the big one: two moves of step-02, and one move of step-05."
+kind = "tutorial"
+notes = "walks/tutorial/notes.md"   # the notes of the whole tutorial
+slides = "walks/tutorial/slides/slides.toml"
+intro = "walks/small/intro.md"    # what its copies say before the first step
+# a range of moves with a title, and one move: each a small step
+select = [{ range = "step-02.2..step-02.3", title = "An empty text, and case" }, "step-05.1"]
+
+[[walk]]
+id = "testing"
+title = "The tests of tally, with notes of its own"
+description = "A small tutorial with its own words at each stop: what it leaves out, and what the moves did."
+kind = "tutorial"
+notes = "walks/testing/notes.md"    # its own notes: an intro, and a ## stop for each place, with its includes
+shared = "walks/tutorial/notes.md"  # the notes that its {{include ...}} lines take move sections from
+slides = "walks/tutorial/slides/slides.toml"
+
+[[walk]]
+id = "finish"
+title = "Types, then the report, with notes of its own"
+description = "A small tutorial with its own words: a whole step, then one move after a gap, and a word at the end."
+kind = "tutorial"
+notes = "walks/finish/notes.md"     # an include of a whole step, and an include of one move
+shared = "walks/tutorial/notes.md"
+slides = "walks/tutorial/slides/slides.toml"
+
+[[walk]]
+id = "story"
+title = "How tally counts, in three stops"
+description = "A small narrative taken out of the tutorial: a move, a step, and a move."
+kind = "narrative"
+notes = "walks/tutorial/notes.md"
+slides = "walks/tutorial/slides/slides.toml"
+intro = "walks/story/intro.md"
+select = ["step-01.1", "step-02", "step-05.2"]   # a narrative stops at steps and at single moves
+
+[[walk]]
+id = "release"
+title = "A release of tally, one move at a time"
+description = "A rename by a patch, a new version, and then its lock: a move whose own uv.lock is out of date."
+kind = "tutorial"
+folder = "walks/release"
+tags = "release-*"                # a tutorial on one part, with tags of its own on the branch release
+# release-01.2 changes pyproject.toml, and leaves uv lock to the next move: the pages check it with --stale-lock
+loose = ["pyproject.toml", "uv.lock"]
