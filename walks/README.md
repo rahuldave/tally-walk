@@ -15,3 +15,5 @@ Each walk is a set of pages. **Read the tutorial** explains each change, with th
 - **How tally counts, in three stops**. [Read the tutorial](story/read.md). [Its website](https://rahuldave.github.io/tally-walk/story/).
 - **A release of tally, one move at a time**. [Read the tutorial](release/read.md), [Build it yourself](release/build.md). [Its website](https://rahuldave.github.io/tally-walk/release/).
 - **A bigger tally, one move at a time**. [Read the tutorial](extra/read.md), [Build it yourself](extra/build.md). [Its website](https://rahuldave.github.io/tally-walk/extra/).
+- **tally, with the author's exact versions**. [Read the tutorial](strict/read.md), [Build it yourself](strict/build.md). [Its website](https://rahuldave.github.io/tally-walk/strict/).
+- **A bigger tally, with the author's exact versions**. [Read the tutorial](strict-extra/read.md), [Build it yourself](strict-extra/build.md). [Its website](https://rahuldave.github.io/tally-walk/strict-extra/).

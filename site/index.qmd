@@ -37,3 +37,5 @@ Each other walk through the project has a website of its own:
 - [How tally counts, in three stops](story/index.html). A small narrative taken out of the tutorial: how tally counts, how its tests check it, and how it finds the most common words.
 - [A release of tally, one move at a time](release/index.html). A rename by a patch, a new version and its lock, and then files renamed and removed by mv and rm.
 - [A bigger tally, one move at a time](extra/index.html). tally gets a table, a page of docs with a picture, a library of its own, and code that ruff passes.
+- [tally, with the author's exact versions](strict/index.html). Build tally yourself with the same versions of its tools as the author: ruff comes from the project, not from today's newest release.
+- [A bigger tally, with the author's exact versions](strict-extra/index.html). tally gets a table, a page of docs, a library of its own and a tool in a group of its own, each at the author's version.
