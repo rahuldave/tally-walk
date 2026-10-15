@@ -4,6 +4,8 @@ title: "Two parts of tally, one move at a time"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 This walk takes two parts of tally alone. The first part is the test of an empty text and the fix of case. The
 second part is the function for the most common words. Each part begins with the code as it was just before it.
 

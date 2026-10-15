@@ -4,6 +4,8 @@ title: "tally, one move at a time"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 We build tally, a small word counter, one change at a time. It begins as a command with nothing to count. At the
 end, it counts the words of a file, has tests and types, and writes a report of the most common words. Every
 command runs through uv, in the project's own environment.

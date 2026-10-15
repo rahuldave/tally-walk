@@ -4,6 +4,8 @@ title: "The tests of tally, with notes of its own"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 This walk takes only the tests of tally. It begins where tally can already count the words of a text. It leaves out
 the formatting, the types and the report.
 

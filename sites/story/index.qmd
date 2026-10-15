@@ -4,6 +4,8 @@ title: "How tally counts, in three stops"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 The story of how tally counts, in three parts. They are the function that counts, the tests, and the option `--top`.
 
 Each part shows the code as it was then. The walk leaves out the rest. It leaves out the command that reads a file,

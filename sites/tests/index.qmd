@@ -4,6 +4,8 @@ title: "Only the tests"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 We follow tally, a word counter, through the three places where its tests matter. We see it before any test, then
 when the tests come, and last when new code comes with a test of its own. Every command runs through uv.
 

@@ -4,6 +4,8 @@ title: "Types, then the report, with notes of its own"
 
 <!-- Made by the walk skill's render.py from the facts of the walk. Do not edit it by hand: run just walk-update again. -->
 
+This walk is one of several through the project. The website of the first, [tally, step by step](../), lists them all.
+
 This walk takes the end of tally. It adds types and a docstring, and then the report. It begins where tally counts,
 and has its tests, ruff and a corpus.
 

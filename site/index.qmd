@@ -22,3 +22,17 @@ Each change explained, with the code to look at.
 - [4 Types and docs](read/step-04.qmd)
 - [5 The most common words](read/step-05.qmd)
 - [6 How to run it](read/step-06.qmd)
+
+## The other walks
+
+Each other walk through the project has a website of its own:
+
+- [Only the tests](tests/index.html). Three steps of tally: the code, its tests, and the most common words.
+- [Tests first, on the parts branch](parts/index.html). A part of the history on a branch of its own: the code and its tests, first.
+- [tally, one move at a time](tutorial/index.html). Build tally yourself, one small commit at a time: a function, its tests, types, and a report.
+- [A git hook, one move at a time](hooks/index.html). A check that git runs before each commit, and then the tests in it, shown one commit at a time.
+- [Two parts of tally, one move at a time](small/index.html). A small tutorial taken out of the big one: two moves of step-02, and one move of step-05.
+- [The tests of tally, with notes of its own](testing/index.html). A small tutorial with its own words at each stop: what it leaves out, and what the moves did.
+- [Types, then the report, with notes of its own](finish/index.html). A small tutorial with its own words: a whole step, then one move after a gap, and a word at the end.
+- [How tally counts, in three stops](story/index.html). A small narrative taken out of the tutorial: a move, a step, and a move.
+- [A release of tally, one move at a time](release/index.html). A rename by a patch, a new version and its lock, and then files renamed and removed by mv and rm.
