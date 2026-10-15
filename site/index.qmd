@@ -27,12 +27,13 @@ Each change explained, with the code to look at.
 
 Each other walk through the project has a website of its own:
 
-- [Only the tests](tests/index.html). Three steps of tally: the code, its tests, and the most common words.
+- [Only the tests](tests/index.html). Three parts of tally: the code, its tests, and the most common words.
 - [Tests first, on the parts branch](parts/index.html). A part of the history on a branch of its own: the code and its tests, first.
-- [tally, one move at a time](tutorial/index.html). Build tally yourself, one small commit at a time: a function, its tests, types, and a report.
+- [tally, one move at a time](tutorial/index.html). Build tally yourself, one small change at a time: a function, its tests, types, and a report.
 - [A git hook, one move at a time](hooks/index.html). A check that git runs before each commit, and then the tests in it, shown one commit at a time.
-- [Two parts of tally, one move at a time](small/index.html). A small tutorial taken out of the big one: two moves of step-02, and one move of step-05.
+- [Two parts of tally, one move at a time](small/index.html). A small tutorial taken out of the big one: two moves on the tests, and one move on the most common words.
 - [The tests of tally, with notes of its own](testing/index.html). A small tutorial with its own words at each stop: what it leaves out, and what the moves did.
-- [Types, then the report, with notes of its own](finish/index.html). A small tutorial with its own words: a whole step, then one move after a gap, and a word at the end.
-- [How tally counts, in three stops](story/index.html). A small narrative taken out of the tutorial: a move, a step, and a move.
+- [Types, then the report, with notes of its own](finish/index.html). A small tutorial with its own words: all the moves on types, then one move after a gap, and a word at the end.
+- [How tally counts, in three stops](story/index.html). A small narrative taken out of the tutorial: how tally counts, how its tests check it, and how it finds the most common words.
 - [A release of tally, one move at a time](release/index.html). A rename by a patch, a new version and its lock, and then files renamed and removed by mv and rm.
+- [A bigger tally, one move at a time](extra/index.html). tally gets a table, a page of docs with a picture, a library of its own, and code that ruff passes.
