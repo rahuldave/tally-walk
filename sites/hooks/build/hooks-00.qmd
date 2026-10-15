@@ -19,6 +19,18 @@ just --list
 
 It lists the recipes of tally, and none of them checks the code.
 
+Check your files against this part. The command prints nothing when they match, and otherwise shows what differs:
+
+```bash
+git check eb951f747563
+```
+
+If you are stuck, this command puts the files of this part in place of yours. A file that you made yourself stays:
+
+```bash
+git rm -rq --cached --ignore-unmatch -- :/ && git restore --source eb951f747563 --staged --worktree -- :/
+```
+
 ## What changed {#hooks-00-what-changed-182c57}
 
 - <a id="hooks-00-.gitignore-a5cc29"></a>`.gitignore`: New, 10 lines. [The file](https://github.com/rahuldave/tally/blob/eb951f74756383392f528427a0cf44e135d5c64f/.gitignore).

@@ -54,6 +54,18 @@ uv run tally
 
 It prints `tally: nothing to count yet`.
 
+Check your files against this part. The command prints nothing when they match, and otherwise shows what differs:
+
+```bash
+git check 6a63758166d3
+```
+
+If you are stuck, this command puts the files of this part in place of yours. A file that you made yourself stays:
+
+```bash
+git rm -rq --cached --ignore-unmatch -- :/ && git restore --source 6a63758166d3 --staged --worktree -- :/
+```
+
 ### What changed
 
 - <a id="step-00-.gitignore-a5cc29"></a>`.gitignore`: the files that git does not hold, such as `.venv`. New, 10 lines. [The file](https://github.com/rahuldave/tally/blob/6a63758166d3aeee516faa6244414d7b54b5a730/.gitignore).

@@ -48,6 +48,18 @@ uv run python -m unittest discover -s tests -q
 
 All three tests pass.
 
+Check your files against this part. The command prints nothing when they match, and otherwise shows what differs:
+
+```bash
+git check bfcbe07463b5
+```
+
+If you are stuck, this command puts the files of this part in place of yours. A file that you made yourself stays:
+
+```bash
+git rm -rq --cached --ignore-unmatch -- :/ && git restore --source bfcbe07463b5 --staged --worktree -- :/
+```
+
 ### What changed
 
 - <a id="release-00-.gitignore-a5cc29"></a>`.gitignore`: New, 10 lines. [The file](https://github.com/rahuldave/tally/blob/bfcbe07463b5c6f3c0764e4ac19a054cb0acee20/.gitignore).
