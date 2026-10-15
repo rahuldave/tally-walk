@@ -10,8 +10,7 @@ tally counts words, and nothing stops a broken file from going into git. We buil
 before each `git commit`. The hook checks that the code compiles, and later that the tests pass. When the check
 fails, git does not record the change.
 
-We build the hook in moves. A move is one small change, made by one patch or by one command. You make each move, and
-the page checks your files against it.
+We build the hook in moves. A move is one small change, made by one patch or by one command.
 
 There are two ways to read this tutorial. Both have the same parts, in the same order.
 

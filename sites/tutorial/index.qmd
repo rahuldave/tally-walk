@@ -11,8 +11,7 @@ end, it counts the words of a file, has tests and types, and writes a report of 
 command runs through uv, in the project's own environment.
 
 We make tally in moves. A move is one small change, made by one patch or by one command. A patch changes a file, and
-a command such as `uv add` writes the files it needs. You make each move, and the page checks your files against it.
-When they match, the move is made, and the next one starts.
+a command such as `uv add` writes the files it needs.
 
 Each move first says what problem it solves. Then it gives the change, piece by piece. Last, a command checks the
 result, and a list names each file that changed, with what to look for in it.

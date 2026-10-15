@@ -85,7 +85,7 @@ files:
 ### release-01.3 The lock, and the list of changes
 
 `uv.lock` records the exact version of each package of the project, tally too. `uv lock` writes it again from
-`pyproject.toml`:
+`pyproject.toml`.
 
 do$ uv lock
 
@@ -103,7 +103,8 @@ The new file `CHANGES.md` has a heading for 0.2.0, and says what changed in the 
 
 $ uv lock --check && grep -A1 '^name = "tally"' uv.lock
 
-`uv lock --check` prints nothing, because the lockfile is up to date. Then `grep` prints the entry of tally, with
+`uv lock --check` prints `Resolved 1 package` and the time it took, and stops with no error, because the lockfile is
+up to date. Then `grep` prints the entry of tally, with
 `version = "0.2.0"`.
 
 files:
@@ -124,7 +125,7 @@ Each file that moves or goes here moves by a command, `mv`, or goes by a command
 
 A user of tally reads `README.md` first, and has no use for the recipes of the `justfile`. They are for the people
 who work on tally. `just` also finds its recipes in a file named `.justfile`, a hidden file that `ls` does not list.
-`mv` gives the `justfile` that name:
+`mv` gives the `justfile` that name.
 
 do$ mv justfile .justfile
 
@@ -165,7 +166,7 @@ files:
 ### release-02.3 One name for the tests
 
 The tests are in two files, `tests/test_count.py` and `tests/test_edge.py`. One file is one place to look. It
-gets the name of the project, `tests/test_tally.py`. `mv` gives the file of edge cases that name:
+gets the name of the project, `tests/test_tally.py`. `mv` gives the file of edge cases that name.
 
 do$ mv tests/test_edge.py tests/test_tally.py
 
@@ -205,7 +206,7 @@ files:
 
 ### release-02.5 The old file of tests goes
 
-Every test of `tests/test_count.py` is now in `tests/test_tally.py` too. `rm` removes the old file:
+Every test of `tests/test_count.py` is now in `tests/test_tally.py` too. `rm` removes the old file.
 
 do$ rm tests/test_count.py
 
@@ -215,7 +216,7 @@ The file `tests/test_count.py` is gone, and its tests stay in `tests/test_tally.
 
 $ uv run python -m unittest discover -s tests -q
 
-Each test runs once again, and all five tests pass.
+Each test now runs one time only, and all five tests pass.
 
 files:
 - diff `tests/test_count.py`: its tests are in `tests/test_tally.py`.
