@@ -4,7 +4,7 @@
 
 **Read the tutorial.** Each change explained, with the code to look at. [Build it yourself](build.md) is the other way to read it.
 
-Each part ends with a section called **What changed**. It lists every file that the part changes, with a link to the file, and then the whole diff of each file, folded. A lockfile and a binary file have a link alone. The text above it explains the change. What changed is what you check your files against.
+Each part ends with a section called **What changed**. It lists every file that the part changes, with a link to the file, and then the whole diff of each file, folded. A lockfile and a binary file have a link alone. The text above it explains the change.
 
 We build tally, a small word counter, one change at a time. It begins as a command with nothing to count. At the
 end, it counts the words of a file, has tests and types, and writes a report of the most common words. Every
