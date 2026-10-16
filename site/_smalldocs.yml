@@ -2,32 +2,727 @@
 project:
   type: website
   output-dir: _site
-  render: ["index.qmd", "read/*.qmd"]   # only these pages
+  render: ["index.qmd", "read/*.qmd", "tests/index.qmd", "tests/read/*.qmd", "parts/index.qmd", "parts/read/*.qmd", "tutorial/index.qmd", "tutorial/read/*.qmd", "tutorial/build/*.qmd", "hooks/index.qmd", "hooks/read/*.qmd", "hooks/build/*.qmd", "small/index.qmd", "small/read/*.qmd", "small/build/*.qmd", "testing/index.qmd", "testing/read/*.qmd", "testing/build/*.qmd", "finish/index.qmd", "finish/read/*.qmd", "finish/build/*.qmd", "story/index.qmd", "story/read/*.qmd", "release/index.qmd", "release/read/*.qmd", "release/build/*.qmd", "extra/index.qmd", "extra/read/*.qmd", "extra/build/*.qmd", "strict/index.qmd", "strict/read/*.qmd", "strict/build/*.qmd", "strict-extra/index.qmd", "strict-extra/read/*.qmd", "strict-extra/build/*.qmd"]   # only these pages
 
 website:
   title: "tally, step by step"
   page-navigation: true
   search: true
   sidebar:
-    style: docked
-    contents:
-      - index.qmd
-      - section: "Read the tutorial"
-        contents:
-          - text: "0 Where it starts"
-            href: read/step-00.qmd
-          - text: "1 Counting"
-            href: read/step-01.qmd
-          - text: "2 Tests"
-            href: read/step-02.qmd
-          - text: "3 Formatting, and a corpus"
-            href: read/step-03.qmd
-          - text: "4 Types and docs"
-            href: read/step-04.qmd
-          - text: "5 The most common words"
-            href: read/step-05.qmd
-          - text: "6 How to run it"
-            href: read/step-06.qmd
+    - title: "tally, step by step"
+      style: docked
+      contents:
+        - index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where it starts"
+              href: read/step-00.qmd
+            - text: "1 Counting"
+              href: read/step-01.qmd
+            - text: "2 Tests"
+              href: read/step-02.qmd
+            - text: "3 Formatting, and a corpus"
+              href: read/step-03.qmd
+            - text: "4 Types and docs"
+              href: read/step-04.qmd
+            - text: "5 The most common words"
+              href: read/step-05.qmd
+            - text: "6 How to run it"
+              href: read/step-06.qmd
+    - title: "Only the tests"
+      style: docked
+      contents:
+        - tests/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "1 Before any test"
+              href: tests/read/step-01.qmd
+            - text: "2 Two tests"
+              href: tests/read/step-02.qmd
+            - text: "5 Still green"
+              href: tests/read/step-05.qmd
+    - title: "Tests first, on the parts branch"
+      style: docked
+      contents:
+        - parts/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "1 The code, with its test"
+              href: parts/read/parts-01.qmd
+            - text: "2 One more test"
+              href: parts/read/parts-02.qmd
+    - title: "tally, one move at a time"
+      style: docked
+      contents:
+        - tutorial/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where it starts"
+              href: tutorial/read/step-00.qmd
+            - section: "1 Counting"
+              href: tutorial/read/step-01.qmd
+              contents:
+                - text: "1.1 A function that counts"
+                  href: tutorial/read/step-01.qmd#step-01.1
+                - text: "1.2 The command counts"
+                  href: tutorial/read/step-01.qmd#step-01.2
+            - section: "2 Tests, one at a time"
+              href: tutorial/read/step-02.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: tutorial/read/step-02.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: tutorial/read/step-02.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: tutorial/read/step-02.qmd#step-02.3
+            - section: "3 Formatting, and a corpus"
+              href: tutorial/read/step-03.qmd
+              contents:
+                - text: "3.1 ruff, a tool for development"
+                  href: tutorial/read/step-03.qmd#step-03.1
+                - text: "3.2 A line length for ruff"
+                  href: tutorial/read/step-03.qmd#step-03.2
+                - text: "3.3 A corpus, which just setup makes"
+                  href: tutorial/read/step-03.qmd#step-03.3
+            - section: "4 Types, then a docstring"
+              href: tutorial/read/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: tutorial/read/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: tutorial/read/step-04.qmd#step-04.2
+            - section: "5 The most common words, and a report"
+              href: tutorial/read/step-05.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: tutorial/read/step-05.qmd#step-05.1
+                - text: "5.2 tally --top N"
+                  href: tutorial/read/step-05.qmd#step-05.2
+                - text: "5.3 A report, which just setup makes"
+                  href: tutorial/read/step-05.qmd#step-05.3
+            - text: "6 How to run it"
+              href: tutorial/read/step-06.qmd
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where it starts"
+              href: tutorial/build/step-00.qmd
+            - section: "1 Counting"
+              href: tutorial/build/step-01.qmd
+              contents:
+                - text: "1.1 A function that counts"
+                  href: tutorial/build/step-01.qmd#step-01.1
+                - text: "1.2 The command counts"
+                  href: tutorial/build/step-01.qmd#step-01.2
+            - section: "2 Tests, one at a time"
+              href: tutorial/build/step-02.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: tutorial/build/step-02.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: tutorial/build/step-02.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: tutorial/build/step-02.qmd#step-02.3
+            - section: "3 Formatting, and a corpus"
+              href: tutorial/build/step-03.qmd
+              contents:
+                - text: "3.1 ruff, a tool for development"
+                  href: tutorial/build/step-03.qmd#step-03.1
+                - text: "3.2 A line length for ruff"
+                  href: tutorial/build/step-03.qmd#step-03.2
+                - text: "3.3 A corpus, which just setup makes"
+                  href: tutorial/build/step-03.qmd#step-03.3
+            - section: "4 Types, then a docstring"
+              href: tutorial/build/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: tutorial/build/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: tutorial/build/step-04.qmd#step-04.2
+            - section: "5 The most common words, and a report"
+              href: tutorial/build/step-05.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: tutorial/build/step-05.qmd#step-05.1
+                - text: "5.2 tally --top N"
+                  href: tutorial/build/step-05.qmd#step-05.2
+                - text: "5.3 A report, which just setup makes"
+                  href: tutorial/build/step-05.qmd#step-05.3
+            - text: "6 How to run it"
+              href: tutorial/build/step-06.qmd
+    - title: "A git hook, one move at a time"
+      style: docked
+      contents:
+        - hooks/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where the hooks start"
+              href: hooks/read/hooks-00.qmd
+            - section: "1 The hook"
+              href: hooks/read/hooks-01.qmd
+              contents:
+                - text: "1.1 A recipe that checks the code"
+                  href: hooks/read/hooks-01.qmd#hooks-01.1
+                - text: "1.2 A hook script"
+                  href: hooks/read/hooks-01.qmd#hooks-01.2
+                - text: "1.3 Make it runnable"
+                  href: hooks/read/hooks-01.qmd#hooks-01.3
+                - text: "1.4 Install it"
+                  href: hooks/read/hooks-01.qmd#hooks-01.4
+            - section: "2 Tests in the hook"
+              href: hooks/read/hooks-02.qmd
+              contents:
+                - text: "2.1 A first test"
+                  href: hooks/read/hooks-02.qmd#hooks-02.1
+                - text: "2.2 The hook runs the tests too"
+                  href: hooks/read/hooks-02.qmd#hooks-02.2
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where the hooks start"
+              href: hooks/build/hooks-00.qmd
+            - section: "1 The hook"
+              href: hooks/build/hooks-01.qmd
+              contents:
+                - text: "1.1 A recipe that checks the code"
+                  href: hooks/build/hooks-01.qmd#hooks-01.1
+                - text: "1.2 A hook script"
+                  href: hooks/build/hooks-01.qmd#hooks-01.2
+                - text: "1.3 Make it runnable"
+                  href: hooks/build/hooks-01.qmd#hooks-01.3
+                - text: "1.4 Install it"
+                  href: hooks/build/hooks-01.qmd#hooks-01.4
+            - section: "2 Tests in the hook"
+              href: hooks/build/hooks-02.qmd
+              contents:
+                - text: "2.1 A first test"
+                  href: hooks/build/hooks-02.qmd#hooks-02.1
+                - text: "2.2 The hook runs the tests too"
+                  href: hooks/build/hooks-02.qmd#hooks-02.2
+    - title: "Two parts of tally, one move at a time"
+      style: docked
+      contents:
+        - small/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - section: "2.2 to 2.3 An empty text, and case"
+              href: small/read/step-02.2-to-step-02.3.qmd
+              contents:
+                - text: "2.2 A test of an empty text"
+                  href: small/read/step-02.2-to-step-02.3.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: small/read/step-02.2-to-step-02.3.qmd#step-02.3
+            - section: "5.1 A function for the most common words"
+              href: small/read/step-05.1.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: small/read/step-05.1.qmd#step-05.1
+        - section: "Build it yourself"
+          contents:
+            - section: "2.2 to 2.3 An empty text, and case"
+              href: small/build/step-02.2-to-step-02.3.qmd
+              contents:
+                - text: "2.2 A test of an empty text"
+                  href: small/build/step-02.2-to-step-02.3.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: small/build/step-02.2-to-step-02.3.qmd#step-02.3
+            - section: "5.1 A function for the most common words"
+              href: small/build/step-05.1.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: small/build/step-05.1.qmd#step-05.1
+    - title: "The tests of tally, with notes of its own"
+      style: docked
+      contents:
+        - testing/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - section: "2.1 to 2.3 Three tests of counting"
+              href: testing/read/step-02.1-to-step-02.3.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: testing/read/step-02.1-to-step-02.3.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: testing/read/step-02.1-to-step-02.3.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: testing/read/step-02.1-to-step-02.3.qmd#step-02.3
+            - section: "5.1 A test of the most common words"
+              href: testing/read/step-05.1.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: testing/read/step-05.1.qmd#step-05.1
+        - section: "Build it yourself"
+          contents:
+            - section: "2.1 to 2.3 Three tests of counting"
+              href: testing/build/step-02.1-to-step-02.3.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: testing/build/step-02.1-to-step-02.3.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: testing/build/step-02.1-to-step-02.3.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: testing/build/step-02.1-to-step-02.3.qmd#step-02.3
+            - section: "5.1 A test of the most common words"
+              href: testing/build/step-05.1.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: testing/build/step-05.1.qmd#step-05.1
+    - title: "Types, then the report, with notes of its own"
+      style: docked
+      contents:
+        - finish/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - section: "4 Types and a docstring"
+              href: finish/read/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: finish/read/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: finish/read/step-04.qmd#step-04.2
+            - section: "5.3 A report of the corpus"
+              href: finish/read/step-05.3.qmd
+              contents:
+                - text: "5.3 A report, which just setup makes"
+                  href: finish/read/step-05.3.qmd#step-05.3
+        - section: "Build it yourself"
+          contents:
+            - section: "4 Types and a docstring"
+              href: finish/build/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: finish/build/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: finish/build/step-04.qmd#step-04.2
+            - section: "5.3 A report of the corpus"
+              href: finish/build/step-05.3.qmd
+              contents:
+                - text: "5.3 A report, which just setup makes"
+                  href: finish/build/step-05.3.qmd#step-05.3
+    - title: "How tally counts, in three stops"
+      style: docked
+      contents:
+        - story/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "1.1 A function that counts"
+              href: story/read/step-01.1.qmd
+            - text: "2 Tests, one at a time"
+              href: story/read/step-02.qmd
+            - text: "5.2 tally --top N"
+              href: story/read/step-05.2.qmd
+    - title: "A release of tally, one move at a time"
+      style: docked
+      contents:
+        - release/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where the release starts"
+              href: release/read/release-00.qmd
+            - section: "1 Release 0.2.0"
+              href: release/read/release-01.qmd
+              contents:
+                - text: "1.1 Tests of edge cases"
+                  href: release/read/release-01.qmd#release-01.1
+                - text: "1.2 Version 0.2.0"
+                  href: release/read/release-01.qmd#release-01.2
+                - text: "1.3 The lock, and the list of changes"
+                  href: release/read/release-01.qmd#release-01.3
+            - section: "2 Tidy the project"
+              href: release/read/release-02.qmd
+              contents:
+                - text: "2.1 A hidden file for the recipes"
+                  href: release/read/release-02.qmd#release-02.1
+                - text: "2.2 A test of lines"
+                  href: release/read/release-02.qmd#release-02.2
+                - text: "2.3 One name for the tests"
+                  href: release/read/release-02.qmd#release-02.3
+                - text: "2.4 Every test in one file"
+                  href: release/read/release-02.qmd#release-02.4
+                - text: "2.5 The old file of tests goes"
+                  href: release/read/release-02.qmd#release-02.5
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where the release starts"
+              href: release/build/release-00.qmd
+            - section: "1 Release 0.2.0"
+              href: release/build/release-01.qmd
+              contents:
+                - text: "1.1 Tests of edge cases"
+                  href: release/build/release-01.qmd#release-01.1
+                - text: "1.2 Version 0.2.0"
+                  href: release/build/release-01.qmd#release-01.2
+                - text: "1.3 The lock, and the list of changes"
+                  href: release/build/release-01.qmd#release-01.3
+            - section: "2 Tidy the project"
+              href: release/build/release-02.qmd
+              contents:
+                - text: "2.1 A hidden file for the recipes"
+                  href: release/build/release-02.qmd#release-02.1
+                - text: "2.2 A test of lines"
+                  href: release/build/release-02.qmd#release-02.2
+                - text: "2.3 One name for the tests"
+                  href: release/build/release-02.qmd#release-02.3
+                - text: "2.4 Every test in one file"
+                  href: release/build/release-02.qmd#release-02.4
+                - text: "2.5 The old file of tests goes"
+                  href: release/build/release-02.qmd#release-02.5
+    - title: "A bigger tally, one move at a time"
+      style: docked
+      contents:
+        - extra/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where it starts"
+              href: extra/read/extra-00.qmd
+            - section: "1 A table, and a tool for the docs"
+              href: extra/read/extra-01.qmd
+              contents:
+                - text: "1.1 tabulate, in a range of versions"
+                  href: extra/read/extra-01.qmd#extra-01.1
+                - text: "1.2 tally --table"
+                  href: extra/read/extra-01.qmd#extra-01.2
+                - text: "1.3 mdformat, in the group docs"
+                  href: extra/read/extra-01.qmd#extra-01.3
+            - section: "2 The docs"
+              href: extra/read/extra-02.qmd
+              contents:
+                - text: "2.1 A page on how to run tally"
+                  href: extra/read/extra-02.qmd#extra-02.1
+                - text: "2.2 The most common words"
+                  href: extra/read/extra-02.qmd#extra-02.2
+                - text: "2.3 The table"
+                  href: extra/read/extra-02.qmd#extra-02.3
+                - text: "2.4 A picture of the most common words"
+                  href: extra/read/extra-02.qmd#extra-02.4
+                - text: "2.5 The page shows the picture"
+                  href: extra/read/extra-02.qmd#extra-02.5
+                - text: "2.6 Count from Python"
+                  href: extra/read/extra-02.qmd#extra-02.6
+                - text: "2.7 The README links to the page"
+                  href: extra/read/extra-02.qmd#extra-02.7
+                - text: "2.8 The picture in green"
+                  href: extra/read/extra-02.qmd#extra-02.8
+                - text: "2.9 Count a file from Python"
+                  href: extra/read/extra-02.qmd#extra-02.9
+                - text: "2.10 A recipe that checks the docs"
+                  href: extra/read/extra-02.qmd#extra-02.10
+                - text: "2.11 The README as mdformat writes it"
+                  href: extra/read/extra-02.qmd#extra-02.11
+                - text: "2.12 The page says how to check the docs"
+                  href: extra/read/extra-02.qmd#extra-02.12
+            - section: "3 A library"
+              href: extra/read/extra-03.qmd
+              contents:
+                - text: "3.1 A library, with uv init"
+                  href: extra/read/extra-03.qmd#extra-03.1
+                - text: "3.2 tally depends on talib"
+                  href: extra/read/extra-03.qmd#extra-03.2
+                - text: "3.3 top goes into talib"
+                  href: extra/read/extra-03.qmd#extra-03.3
+            - section: "3b Lint"
+              href: extra/read/extra-03b.qmd
+              contents:
+                - text: "3b.1 What ruff fixes"
+                  href: extra/read/extra-03b.qmd#extra-03b.1
+                - text: "3b.2 main closes its file"
+                  href: extra/read/extra-03b.qmd#extra-03b.2
+            - section: "4 One dependency less"
+              href: extra/read/extra-04.qmd
+              contents:
+                - text: "4.1 tally draws its own table"
+                  href: extra/read/extra-04.qmd#extra-04.1
+                - text: "4.2 tabulate goes"
+                  href: extra/read/extra-04.qmd#extra-04.2
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where it starts"
+              href: extra/build/extra-00.qmd
+            - section: "1 A table, and a tool for the docs"
+              href: extra/build/extra-01.qmd
+              contents:
+                - text: "1.1 tabulate, in a range of versions"
+                  href: extra/build/extra-01.qmd#extra-01.1
+                - text: "1.2 tally --table"
+                  href: extra/build/extra-01.qmd#extra-01.2
+                - text: "1.3 mdformat, in the group docs"
+                  href: extra/build/extra-01.qmd#extra-01.3
+            - section: "2 The docs"
+              href: extra/build/extra-02.qmd
+              contents:
+                - text: "2.1 A page on how to run tally"
+                  href: extra/build/extra-02.qmd#extra-02.1
+                - text: "2.2 The most common words"
+                  href: extra/build/extra-02.qmd#extra-02.2
+                - text: "2.3 The table"
+                  href: extra/build/extra-02.qmd#extra-02.3
+                - text: "2.4 A picture of the most common words"
+                  href: extra/build/extra-02.qmd#extra-02.4
+                - text: "2.5 The page shows the picture"
+                  href: extra/build/extra-02.qmd#extra-02.5
+                - text: "2.6 Count from Python"
+                  href: extra/build/extra-02.qmd#extra-02.6
+                - text: "2.7 The README links to the page"
+                  href: extra/build/extra-02.qmd#extra-02.7
+                - text: "2.8 The picture in green"
+                  href: extra/build/extra-02.qmd#extra-02.8
+                - text: "2.9 Count a file from Python"
+                  href: extra/build/extra-02.qmd#extra-02.9
+                - text: "2.10 A recipe that checks the docs"
+                  href: extra/build/extra-02.qmd#extra-02.10
+                - text: "2.11 The README as mdformat writes it"
+                  href: extra/build/extra-02.qmd#extra-02.11
+                - text: "2.12 The page says how to check the docs"
+                  href: extra/build/extra-02.qmd#extra-02.12
+            - section: "3 A library"
+              href: extra/build/extra-03.qmd
+              contents:
+                - text: "3.1 A library, with uv init"
+                  href: extra/build/extra-03.qmd#extra-03.1
+                - text: "3.2 tally depends on talib"
+                  href: extra/build/extra-03.qmd#extra-03.2
+                - text: "3.3 top goes into talib"
+                  href: extra/build/extra-03.qmd#extra-03.3
+            - section: "3b Lint"
+              href: extra/build/extra-03b.qmd
+              contents:
+                - text: "3b.1 What ruff fixes"
+                  href: extra/build/extra-03b.qmd#extra-03b.1
+                - text: "3b.2 main closes its file"
+                  href: extra/build/extra-03b.qmd#extra-03b.2
+            - section: "4 One dependency less"
+              href: extra/build/extra-04.qmd
+              contents:
+                - text: "4.1 tally draws its own table"
+                  href: extra/build/extra-04.qmd#extra-04.1
+                - text: "4.2 tabulate goes"
+                  href: extra/build/extra-04.qmd#extra-04.2
+    - title: "tally, with the author's exact versions"
+      style: docked
+      contents:
+        - strict/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where it starts"
+              href: strict/read/step-00.qmd
+            - section: "1 Counting"
+              href: strict/read/step-01.qmd
+              contents:
+                - text: "1.1 A function that counts"
+                  href: strict/read/step-01.qmd#step-01.1
+                - text: "1.2 The command counts"
+                  href: strict/read/step-01.qmd#step-01.2
+            - section: "2 Tests, one at a time"
+              href: strict/read/step-02.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: strict/read/step-02.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: strict/read/step-02.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: strict/read/step-02.qmd#step-02.3
+            - section: "3 Formatting, and a corpus"
+              href: strict/read/step-03.qmd
+              contents:
+                - text: "3.1 ruff, a tool for development"
+                  href: strict/read/step-03.qmd#step-03.1
+                - text: "3.2 A line length for ruff"
+                  href: strict/read/step-03.qmd#step-03.2
+                - text: "3.3 A corpus, which just setup makes"
+                  href: strict/read/step-03.qmd#step-03.3
+            - section: "4 Types, then a docstring"
+              href: strict/read/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: strict/read/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: strict/read/step-04.qmd#step-04.2
+            - section: "5 The most common words, and a report"
+              href: strict/read/step-05.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: strict/read/step-05.qmd#step-05.1
+                - text: "5.2 tally --top N"
+                  href: strict/read/step-05.qmd#step-05.2
+                - text: "5.3 A report, which just setup makes"
+                  href: strict/read/step-05.qmd#step-05.3
+            - text: "6 How to run it"
+              href: strict/read/step-06.qmd
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where it starts"
+              href: strict/build/step-00.qmd
+            - section: "1 Counting"
+              href: strict/build/step-01.qmd
+              contents:
+                - text: "1.1 A function that counts"
+                  href: strict/build/step-01.qmd#step-01.1
+                - text: "1.2 The command counts"
+                  href: strict/build/step-01.qmd#step-01.2
+            - section: "2 Tests, one at a time"
+              href: strict/build/step-02.qmd
+              contents:
+                - text: "2.1 A test of counting"
+                  href: strict/build/step-02.qmd#step-02.1
+                - text: "2.2 A test of an empty text"
+                  href: strict/build/step-02.qmd#step-02.2
+                - text: "2.3 Case does not matter"
+                  href: strict/build/step-02.qmd#step-02.3
+            - section: "3 Formatting, and a corpus"
+              href: strict/build/step-03.qmd
+              contents:
+                - text: "3.1 ruff, a tool for development"
+                  href: strict/build/step-03.qmd#step-03.1
+                - text: "3.2 A line length for ruff"
+                  href: strict/build/step-03.qmd#step-03.2
+                - text: "3.3 A corpus, which just setup makes"
+                  href: strict/build/step-03.qmd#step-03.3
+            - section: "4 Types, then a docstring"
+              href: strict/build/step-04.qmd
+              contents:
+                - text: "4.1 Types"
+                  href: strict/build/step-04.qmd#step-04.1
+                - text: "4.2 A docstring"
+                  href: strict/build/step-04.qmd#step-04.2
+            - section: "5 The most common words, and a report"
+              href: strict/build/step-05.qmd
+              contents:
+                - text: "5.1 A function for the most common words"
+                  href: strict/build/step-05.qmd#step-05.1
+                - text: "5.2 tally --top N"
+                  href: strict/build/step-05.qmd#step-05.2
+                - text: "5.3 A report, which just setup makes"
+                  href: strict/build/step-05.qmd#step-05.3
+            - text: "6 How to run it"
+              href: strict/build/step-06.qmd
+    - title: "A bigger tally, with the author's exact versions"
+      style: docked
+      contents:
+        - strict-extra/index.qmd
+        - section: "Read the tutorial"
+          contents:
+            - text: "0 Where it starts"
+              href: strict-extra/read/extra-00.qmd
+            - section: "1 A table, and a tool for the docs"
+              href: strict-extra/read/extra-01.qmd
+              contents:
+                - text: "1.1 tabulate, in a range of versions"
+                  href: strict-extra/read/extra-01.qmd#extra-01.1
+                - text: "1.2 tally --table"
+                  href: strict-extra/read/extra-01.qmd#extra-01.2
+                - text: "1.3 mdformat, in the group docs"
+                  href: strict-extra/read/extra-01.qmd#extra-01.3
+            - section: "2 The docs"
+              href: strict-extra/read/extra-02.qmd
+              contents:
+                - text: "2.1 A page on how to run tally"
+                  href: strict-extra/read/extra-02.qmd#extra-02.1
+                - text: "2.2 The most common words"
+                  href: strict-extra/read/extra-02.qmd#extra-02.2
+                - text: "2.3 The table"
+                  href: strict-extra/read/extra-02.qmd#extra-02.3
+                - text: "2.4 A picture of the most common words"
+                  href: strict-extra/read/extra-02.qmd#extra-02.4
+                - text: "2.5 The page shows the picture"
+                  href: strict-extra/read/extra-02.qmd#extra-02.5
+                - text: "2.6 Count from Python"
+                  href: strict-extra/read/extra-02.qmd#extra-02.6
+                - text: "2.7 The README links to the page"
+                  href: strict-extra/read/extra-02.qmd#extra-02.7
+                - text: "2.8 The picture in green"
+                  href: strict-extra/read/extra-02.qmd#extra-02.8
+                - text: "2.9 Count a file from Python"
+                  href: strict-extra/read/extra-02.qmd#extra-02.9
+                - text: "2.10 A recipe that checks the docs"
+                  href: strict-extra/read/extra-02.qmd#extra-02.10
+                - text: "2.11 The README as mdformat writes it"
+                  href: strict-extra/read/extra-02.qmd#extra-02.11
+                - text: "2.12 The page says how to check the docs"
+                  href: strict-extra/read/extra-02.qmd#extra-02.12
+            - section: "3 A library"
+              href: strict-extra/read/extra-03.qmd
+              contents:
+                - text: "3.1 A library, with uv init"
+                  href: strict-extra/read/extra-03.qmd#extra-03.1
+                - text: "3.2 tally depends on talib"
+                  href: strict-extra/read/extra-03.qmd#extra-03.2
+                - text: "3.3 top goes into talib"
+                  href: strict-extra/read/extra-03.qmd#extra-03.3
+            - section: "3b Lint"
+              href: strict-extra/read/extra-03b.qmd
+              contents:
+                - text: "3b.1 What ruff fixes"
+                  href: strict-extra/read/extra-03b.qmd#extra-03b.1
+                - text: "3b.2 main closes its file"
+                  href: strict-extra/read/extra-03b.qmd#extra-03b.2
+            - section: "4 One dependency less"
+              href: strict-extra/read/extra-04.qmd
+              contents:
+                - text: "4.1 tally draws its own table"
+                  href: strict-extra/read/extra-04.qmd#extra-04.1
+                - text: "4.2 tabulate goes"
+                  href: strict-extra/read/extra-04.qmd#extra-04.2
+        - section: "Build it yourself"
+          contents:
+            - text: "0 Where it starts"
+              href: strict-extra/build/extra-00.qmd
+            - section: "1 A table, and a tool for the docs"
+              href: strict-extra/build/extra-01.qmd
+              contents:
+                - text: "1.1 tabulate, in a range of versions"
+                  href: strict-extra/build/extra-01.qmd#extra-01.1
+                - text: "1.2 tally --table"
+                  href: strict-extra/build/extra-01.qmd#extra-01.2
+                - text: "1.3 mdformat, in the group docs"
+                  href: strict-extra/build/extra-01.qmd#extra-01.3
+            - section: "2 The docs"
+              href: strict-extra/build/extra-02.qmd
+              contents:
+                - text: "2.1 A page on how to run tally"
+                  href: strict-extra/build/extra-02.qmd#extra-02.1
+                - text: "2.2 The most common words"
+                  href: strict-extra/build/extra-02.qmd#extra-02.2
+                - text: "2.3 The table"
+                  href: strict-extra/build/extra-02.qmd#extra-02.3
+                - text: "2.4 A picture of the most common words"
+                  href: strict-extra/build/extra-02.qmd#extra-02.4
+                - text: "2.5 The page shows the picture"
+                  href: strict-extra/build/extra-02.qmd#extra-02.5
+                - text: "2.6 Count from Python"
+                  href: strict-extra/build/extra-02.qmd#extra-02.6
+                - text: "2.7 The README links to the page"
+                  href: strict-extra/build/extra-02.qmd#extra-02.7
+                - text: "2.8 The picture in green"
+                  href: strict-extra/build/extra-02.qmd#extra-02.8
+                - text: "2.9 Count a file from Python"
+                  href: strict-extra/build/extra-02.qmd#extra-02.9
+                - text: "2.10 A recipe that checks the docs"
+                  href: strict-extra/build/extra-02.qmd#extra-02.10
+                - text: "2.11 The README as mdformat writes it"
+                  href: strict-extra/build/extra-02.qmd#extra-02.11
+                - text: "2.12 The page says how to check the docs"
+                  href: strict-extra/build/extra-02.qmd#extra-02.12
+            - section: "3 A library"
+              href: strict-extra/build/extra-03.qmd
+              contents:
+                - text: "3.1 A library, with uv init"
+                  href: strict-extra/build/extra-03.qmd#extra-03.1
+                - text: "3.2 tally depends on talib"
+                  href: strict-extra/build/extra-03.qmd#extra-03.2
+                - text: "3.3 top goes into talib"
+                  href: strict-extra/build/extra-03.qmd#extra-03.3
+            - section: "3b Lint"
+              href: strict-extra/build/extra-03b.qmd
+              contents:
+                - text: "3b.1 What ruff fixes"
+                  href: strict-extra/build/extra-03b.qmd#extra-03b.1
+                - text: "3b.2 main closes its file"
+                  href: strict-extra/build/extra-03b.qmd#extra-03b.2
+            - section: "4 One dependency less"
+              href: strict-extra/build/extra-04.qmd
+              contents:
+                - text: "4.1 tally draws its own table"
+                  href: strict-extra/build/extra-04.qmd#extra-04.1
+                - text: "4.2 tabulate goes"
+                  href: strict-extra/build/extra-04.qmd#extra-04.2
 
 theme: cosmo
 css: styles.css
